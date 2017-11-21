@@ -89,6 +89,9 @@ if [ ! -z "$PHP_UPLOAD_MAX_FILESIZE" ]; then
  sed -i "s/upload_max_filesize = 100M/upload_max_filesize= ${PHP_UPLOAD_MAX_FILESIZE}M/g" /etc/php5/conf.d/php.ini
 fi
 
+# Enable short_open_tag
+sed -i "s/short_open_tag = Off/short_open_tag = On/g" /etc/php5/conf.d/php.ini
+
 # Always chown webroot for better mounting
 chown -Rf nginx.nginx /var/www/html
 
