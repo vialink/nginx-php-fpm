@@ -84,11 +84,6 @@ if [ ! -z "$PHP_POST_MAX_SIZE" ]; then
  sed -i "s/post_max_size = 100M/post_max_size = ${PHP_POST_MAX_SIZE}M/g" /etc/php5/conf.d/php.ini
 fi
 
-# Set OPENSSL cafile
-if [ ! -z "$PHP_OPENSSL_CAFILE" ]; then
- sed -i "s/;openssl\.cafile=/openssl\.cafile = ${PHP_OPENSSL_CAFILE}/g" /etc/php5/conf.d/php.ini
-fi
-
 # Enable short_open_tag
 sed -i "s/short_open_tag = Off/short_open_tag = On/g" /etc/php5/conf.d/php.ini
 
