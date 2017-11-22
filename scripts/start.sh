@@ -86,7 +86,7 @@ fi
 
 # Set OPENSSL cafile
 if [ ! -z "$PHP_OPENSSL_CAFILE" ]; then
- sed -i "s/;openssl.cafile=/openssl.cafile = ${PHP_OPENSSL_CAFILE}/g" /etc/php5/conf.d/php.ini
+ sed -i "s/;openssl\.cafile=/openssl\.cafile = ${PHP_OPENSSL_CAFILE}/g" /etc/php5/conf.d/php.ini
 fi
 
 # Enable short_open_tag
