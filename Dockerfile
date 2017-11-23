@@ -107,6 +107,7 @@ RUN sed -i \
 
 # Add Cron for 10min
 RUN crontab -l | { cat; echo "*/10 * * * * /var/www/html/cron/10min.sh"; } | crontab -
+RUN crond
 
 # Add Scripts
 ADD scripts/start.sh /start.sh
