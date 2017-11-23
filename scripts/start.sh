@@ -87,6 +87,11 @@ fi
 # Enable short_open_tag
 sed -i "s/short_open_tag = Off/short_open_tag = On/g" /etc/php5/conf.d/php.ini
 
+# Set Timezone
+if [ ! -z "$TIMEZONE" ]; then
+ cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
+fi
+
 # Always chown webroot for better mounting
 chown -Rf nginx.nginx /var/www/html
 
