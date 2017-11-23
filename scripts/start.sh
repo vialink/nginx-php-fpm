@@ -107,5 +107,8 @@ if [[ "$RUN_SCRIPTS" == "1" ]] ; then
   fi
 fi
 
+# Start crond
+crond
+
 # Start supervisord and services
 /usr/bin/supervisord -n -c /etc/supervisord.conf
