@@ -104,6 +104,9 @@ RUN sed -i \
     ln -s /etc/php5/php.ini /etc/php5/conf.d/php.ini && \
     find /etc/php5/conf.d/ -name "*.ini" -exec sed -i -re 's/^(\s*)#(.*)/\1;\2/g' {} \;
 
+# Add Cron for 10min
+RUN crontab -l | { cat; echo "0/10 * * * * /var/www/html/cron/10min.sh"; } | crontab -
+
 # Add Scripts
 ADD scripts/start.sh /start.sh
 ADD scripts/pull /usr/bin/pull
