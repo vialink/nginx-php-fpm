@@ -14,6 +14,7 @@ RUN echo @testing http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repo
     supervisor \
     curl \
     git \
+    tzdata \
     php5-fpm \
     php5-pdo \
     php5-pdo_mysql \
