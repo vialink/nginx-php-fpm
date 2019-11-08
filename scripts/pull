@@ -17,4 +17,4 @@ fi
 
 cd /var/www/html
 git pull || exit 1
-chown -Rf nginx:nginx /var/www/html
+chown -Rf www-data:www-data /var/www/html
