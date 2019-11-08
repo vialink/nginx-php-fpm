@@ -47,7 +47,7 @@ if [ ! -d "/var/www/html/.git" ]; then
        git clone https://${GIT_USERNAME}:${GIT_PERSONAL_TOKEN}@${GIT_REPO} /var/www/html
      fi
    fi
-   chown -Rf nginx.nginx /var/www/html
+   chown -Rf www-data.www-data /var/www/html
  fi
 fi
 
@@ -93,7 +93,7 @@ if [ ! -z "$TIMEZONE" ]; then
 fi
 
 # Always chown webroot for better mounting
-chown -Rf nginx.nginx /var/www/html
+chown -Rf www-data.www-data /var/www/html
 
 # Run custom scripts
 if [[ "$RUN_SCRIPTS" == "1" ]] ; then
